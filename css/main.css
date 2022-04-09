@@ -13,10 +13,94 @@ div , span {
   border: 0;
 }
 .wrapper{
+  
+  background: linear-gradient(45deg, #00c6fb, #005bea);
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #e4e9ed;
+}
+.player{
+  border: 1px solid rgba(34, 60, 80, 0.8);
+  box-shadow: 3px 2px 57px 0px rgba(34, 60, 80, 0.9);
+  background: linear-gradient(45deg, #00c6fb, #005bea);
+  background-color: #eff3f5;
+  border-radius: 30px;
+  max-width: 380px;
+  width: 100%;
+  padding: 25px;
+}
+.title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2b3c5b;
+  text-align: center;
+}
+.cover{
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+.song{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #2b3c5b;
+  text-align: center;
+}
+.progress__container{
+  background-color: #e5e9ed;
+  border-radius: 5px;
+  width: 100%;
+  height: 6px;
+  margin-top: 63px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.progress{
+  background: #2b3c5b;
+  border-radius: 5px;
+  height: 6px;
+  width: 150px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 184px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+.cover__img{
+  width: 200px;
+
+}
+.cover__img_active{
+  animation: rotateAnimation 3 linear infinite
+}
+.img_width{
+  width: 70px;
+}
+.img_arrow_left{
+  transform: rotate(180deg);
+}
+.btn{
+  cursor: pointer;
+}
+
+
+@keyframes rotateAnimation{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }

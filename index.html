@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/main.css">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="player">
+        <div class="title">Now Playing</div>
+        <div class="cover">
+          <img class="cover__img " src="/img/circle_PNG33.png" alt="" />
+        </div>
+        <div class="song">Brooklyn and the Bridge</div>
+        <audio
+          class="audio"
+          src="/audio/I have a dream,I wanna be like Ricardo.mp3"
+        ></audio>
+        <div class="progress__container">
+          <div class="progress"></div>
+        </div>
+        <div class="buttons">
+          <div class="btn prev">
+            <img
+              class="img_arrow_left img_width"
+              src="/img/png-transparent-button-computer-icons-arrow-saxophone-player-angle-rectangle-monochrome.png"
+              alt="btn"
+            />
+          </div>
+          <div class="btn play">
+            <img
+              class="img__src img_width"
+              src="/img//download.png"
+              alt="btn"
+            />
+          </div>
+          <div class="btn next">
+            <img
+              class="img_arrow_right img_width"
+              src="/img/png-transparent-button-computer-icons-arrow-saxophone-player-angle-rectangle-monochrome.png"
+              alt="btn"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
