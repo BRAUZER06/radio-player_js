@@ -17,7 +17,7 @@ const songs = [
   "Modern Talking",
   "Morgan Saint",
 ];
-//песня по умолчанию 
+//песня по умолчанию
 let songIndex = 0;
 //init
 function loadSong(song) {
@@ -28,21 +28,74 @@ function loadSong(song) {
 loadSong(songs(songIndex));
 
 //play
-function playSong(){
-  player.classList.add('play')
-  audio.play()
+function playSong() {
+  cover.classList.add("cover__img_active");
+  player.classList.add("play");
+  audio.play();
 }
 
 //stop
-function pauseSong(){
-  player.classList.remove('play')
-  audio.play()
+function pauseSong() {
+  cover.classList.remove("cover__img_active");
+  player.classList.remove("play");
+  audio.play();
 }
-playBtn.addEventListener('click',()=>{
-  const isPlaying = player.classList.contains('play')
-  if(isPlaying){
-    pauseSong()
-  }else{
-    playSong()
+playBtn.addEventListener("click", () => {
+  const isPlaying = player.classList.contains("play");
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
   }
-})
+});
+//next song
+function nextSong() {
+  songIndex++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+  loadSong(songs[songIndex]);
+  playSong();
+}
+
+nextBtn.addEventListener("click", nextSong);
+
+//Prev song
+
+function prevSong() {
+  songIndex--;
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+  loadSong(songs[songIndex]);
+  playSong();
+}
+
+prevBtn.addEventListener("click", prevSong);
+
+//Progress bar
+
+function updateProgress(e) {
+  const { duration, currentTime } = e.srcElement;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.getElementsByClassName.width = `${progressPercent}%`;
+
+}
+
+audio.addEventListener('timeupdate', updateProgress)
+
+//set progress
+
+function setProgress(e){
+  const width = this.clientWidth
+  const clickX = e.offsetX
+  const duration = audio.duration
+
+  audio.currentTime = (clickX / width) *duration
+}
+progressContainer.addEventListener('click', setProgress)
+
+// AutoPlay
+audio.addEventListener("ended", nextSong)
+
